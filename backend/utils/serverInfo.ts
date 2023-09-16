@@ -6,7 +6,7 @@ export default async function getServerInfo(): Promise<ServerInfo> {
   const mem = await si.mem();
   return {
     name: (await si.osInfo())?.hostname ?? '',
-    uuid: (await si.system())?.uuid || (await si.uuid())?.os || '',
+    uuid: (await si.system())?.uuid || (await si.uuid())?.os || (await si.osInfo())?.hostname || '',
     stats: {
       cpu: (await si.currentLoad())?.currentLoad ?? 0,
       memory: mem?.used ?? 0,
