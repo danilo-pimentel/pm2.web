@@ -21,7 +21,7 @@ const processSchema = new mongoose.Schema({
   type: {
     type: String,
     required: true,
-    enum: ['node', 'python', 'ruby', 'php', 'bash', 'go', 'dotnet', 'shell', 'java', 'other'],
+    enum: ['node', 'python', 'ruby', 'php', 'bash', 'go', 'dotnet', 'shell', 'java', 'other', 'none'],
   },
   stats: {
     cpu: Number,
